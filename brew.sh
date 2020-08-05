@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e
-brew install stow \
+brew install carthage \
+             stow \
              rg \
              tree \
              wget
