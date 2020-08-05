@@ -1,5 +1,5 @@
 " Basic Options
-let mapleader = " "
+let mapleader = ' '
 
 set number
 set hidden
@@ -20,21 +20,19 @@ set expandtab
 " Plugins
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'cfdrake/vim-carthage'
 Plug 'airblade/vim-gitgutter'
+Plug 'cfdrake/vim-carthage'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'cfdrake/vim-pbxproj'
 Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 
-"Colors
-
-if has("gui_running")
+" Colors
+if has('gui_running')
   colorscheme macvim
 else
   colorscheme default
 endif
 
-" Bindings
-nnoremap <leader>f :files<CR>
-nnoremap <leader>b :buffers<CR>
+map <leader><leader> :CtrlP<CR>
