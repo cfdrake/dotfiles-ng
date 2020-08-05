@@ -1,7 +1,8 @@
-## ZSH
+## ZSH Basics
 setopt auto_cd
 setopt no_case_glob
 
+## ZSH History
 export HISTSIZE=10000
 export SAVEHIST=$HISTSIZE
 export HISTFILE=~/.zsh_history
@@ -10,7 +11,16 @@ setopt hist_ignore_dups
 setopt inc_append_history
 setopt share_history
 
-export PROMPT='%B%F{240}%1~%f%b %# '
+## ZSH Prompt
+autoload -Uz vcs_info
+setopt prompt_subst
+zstyle ':vcs_info:git:*' formats '(%b)'
+
+function precmd () {
+  vcs_info
+}
+
+export PROMPT="%B%F{240}%1~ \$vcs_info_msg_0_%f%b %# "
 
 ## Exports
 export PATH="$PATH:~/bin"
