@@ -14,13 +14,13 @@ setopt share_history
 ## ZSH Prompt
 autoload -Uz vcs_info
 setopt prompt_subst
-zstyle ':vcs_info:git:*' formats '(%b)'
+zstyle ':vcs_info:git:*' formats '(%b) '
 
 function precmd () {
   vcs_info
 }
 
-export PROMPT="%B%F{240}%1~ \$vcs_info_msg_0_%f%b %# "
+export PROMPT="%B%F{240}%1~ \$vcs_info_msg_0_%f%b%# "
 
 ## Exports
 export PATH="$PATH:~/bin"
