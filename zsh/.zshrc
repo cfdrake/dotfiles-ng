@@ -59,6 +59,7 @@ alias gh="git rev-parse HEAD"
 alias gca="git commit -a"
 alias gl="git pull"
 alias glo="git log"
+alias gm="git merge"
 alias gp="git push"
 alias gst="git status"
 
@@ -67,6 +68,7 @@ alias f="bundle exec fastlane"
 alias xcp="open *.xcodeproj"
 alias xcw="open *.xcworkspace"
 
+alias h="hugo"
 alias hs="hugo server -D"
 
 ## Functions
