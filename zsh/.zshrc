@@ -51,12 +51,12 @@ alias g="git"
 alias ga="git add"
 alias gb="git branch"
 alias gbc="git branch --show-current"
-alias gc="git commit"
+alias gc="git commit -v"
 alias gco="git checkout"
 alias gcob="git checkout -b"
 alias gd="git diff"
 alias gh="git rev-parse HEAD"
-alias gca="git commit -a"
+alias gca="git commit -av"
 alias gl="git pull"
 alias glo="git log"
 alias gm="git merge"
@@ -78,6 +78,18 @@ function finder() {
 
 function trash() {
   mv $@ ~/.Trash
+}
+
+function use-xcode() {
+  xcode_path="/Applications/Xcode.app/Contents/Developer"
+  xcode_backup_path="/Applications/Xcode Backups/Xcode $1.app/Contents/Developer"
+
+  if [[ -d $xcode_backup_path ]]; then
+    xcode_path=$xcode_backup_path
+  fi
+
+  echo "Switching to Xcode at $xcode_path..."
+  sudo xcode-select -s $xcode_path
 }
 
 ## Local
