@@ -25,6 +25,7 @@ Plug 'cfdrake/vim-carthage'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'cfdrake/vim-pbxproj'
 Plug 'sheerun/vim-polyglot'
+Plug 'preservim/nerdtree'
 
 call plug#end()
 
@@ -36,3 +37,4 @@ else
 endif
 
 map <leader><leader> :CtrlP<CR>
+map <leader>t :NERDTree<CR>
