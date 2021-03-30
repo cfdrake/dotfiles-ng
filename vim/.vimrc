@@ -22,19 +22,28 @@ call plug#begin('~/.config/nvim/plugged')
 
 Plug 'airblade/vim-gitgutter'
 Plug 'cfdrake/vim-carthage'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'cfdrake/vim-pbxproj'
 Plug 'sheerun/vim-polyglot'
 Plug 'preservim/nerdtree'
+Plug 'vimwiki/vimwiki'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
 " Colors
 if has('gui_running')
-  colorscheme macvim
+  colorscheme industry
+  set guifont=Menlo:h14
+  set background=dark
 else
   colorscheme default
 endif
 
-map <leader><leader> :CtrlP<CR>
-map <leader>t :NERDTree<CR>
+highlight clear SignColumn
+
+" Hotkeys
+map <leader>f :Files<CR>
+map <leader>l :Lines<CR>
+map <leader>b :Buffers<CR>
+map <leader>g :Rg<CR>
