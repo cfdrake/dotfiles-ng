@@ -1,7 +1,0 @@
-# Main settings
-altscreen on
-startup_message off
-term screen-256color
-
-# Statusbar
-hardstatus alwayslastline '%{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}]'

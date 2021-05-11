@@ -1,9 +1,13 @@
-## ZSH Basics
+##
+## Colin's zsh config: common
+
+##
+## ZSH
+
 setopt auto_cd
 setopt no_case_glob
 
-## ZSH History
-export HISTSIZE=10000
+export HISTSIZE=100000
 export SAVEHIST=$HISTSIZE
 export HISTFILE=~/.zsh_history
 setopt extended_history
@@ -11,7 +15,6 @@ setopt hist_ignore_dups
 setopt inc_append_history
 setopt share_history
 
-## ZSH Prompt
 autoload -Uz vcs_info
 setopt prompt_subst
 zstyle ':vcs_info:git:*' formats '(%b) '
@@ -22,30 +25,36 @@ function precmd () {
 
 export PROMPT="%B%F{240}%1~ \$vcs_info_msg_0_%f%b%# "
 
-## Exports
-export PATH="$PATH:~/bin"
+##
+## General Shell
 
+export PATH="$PATH:~/bin"
 export CLICOLOR="1"
 export LSCOLORS="gxBxhxDxfxhxhxhxhxcxcx"
-
 export EDITOR="vim"
 export PAGER="less"
 
-## Aliases
 alias df="df -h"
 alias du="du -h"
-alias l="ls -l"
-alias la="ls -la"
-alias ll="ls -l"
-alias ls="ls -l"
-alias lrt="ls -lrt"
+alias l="ls -lh"
+alias la="ls -lah"
+alias ll="ls -lh"
+alias ls="ls -lh"
+alias lrt="ls -lrth"
+alias m="/Applications/MacVim.app/Contents/bin/gvim"
+alias macvim="/Applications/MacVim.app/Contents/bin/gvim"
+alias now="date +\"%Y-%m-%e %H:%M:%S%z\""
 alias sudo="sudo "
-alias t="tree -C"
-alias ta="tree -Ca -I .git"
 alias timestamp="date +%s"
-alias v="$EDITOR"
-alias vv="open -a /Applications/MacVim.app"
-alias vw="vv ~/vimwiki/index.wiki"
+alias v="vim"
+
+##
+## General Development
+
+alias pbj="pbpaste | jq"
+
+##
+## Git
 
 alias g="git"
 alias ga="git add"
@@ -63,36 +72,18 @@ alias gm="git merge"
 alias gp="git push"
 alias gst="git status"
 
-alias c="carthage"
-alias f="bundle exec fastlane"
+##
+## Mobile Development
+
+alias fast="bundle exec fastlane"
 alias xcp="open *.xcodeproj"
 alias xcw="open *.xcworkspace"
+alias rm-derived-data="rm -rf ~/Library/Developer/Xcode/DerivedData"
+
+##
+## Web Development
 
 alias h="hugo"
 alias hs="hugo server -D"
-
-## Functions
-function finder() {
-  open .
-}
-
-function trash() {
-  mv $@ ~/.Trash
-}
-
-function use-xcode() {
-  xcode_path="/Applications/Xcode.app/Contents/Developer"
-  xcode_backup_path="/Applications/Xcode Backups/Xcode $1.app/Contents/Developer"
-
-  if [[ -d $xcode_backup_path ]]; then
-    xcode_path=$xcode_backup_path
-  fi
-
-  echo "Switching to Xcode at $xcode_path..."
-  sudo xcode-select -s $xcode_path
-}
-
-## Local
-if [[ -f ~/.zshrc.local ]]; then
-  source ~/.zshrc.local
-fi
+alias serve="caddy file-server -browse -listen :5335"
+alias ip="curl ifconfig.me"

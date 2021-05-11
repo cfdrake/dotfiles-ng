@@ -1,0 +1,58 @@
+""
+"" Colin's vimrc
+
+""
+"" Basic Options
+
+let mapleader = ' '
+
+set number
+set hidden
+set backspace=2
+set ruler
+set title
+
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
+set showmatch
+
+set tabstop=2
+set shiftwidth=2
+set expandtab
+
+""
+"" Plugins
+
+call plug#begin('~/.config/nvim/plugged')
+
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'majutsushi/tagbar'
+Plug 'mhinz/vim-startify'
+Plug 'mhinz/vim-signify'
+Plug 'psliwka/vim-smoothie'
+Plug 'sheerun/vim-polyglot'
+Plug 'tpope/vim-dispatch'
+
+call plug#end()
+
+""
+"" Colors
+
+colorscheme torte
+
+if has('gui_running')
+  set background=dark
+  set guifont=Menlo:h16
+endif
+
+highlight SignColumn guibg=black
+
+""
+"" Hotkeys
+
+map <D-O> :Files<CR>
+map <D-F> :Rg<CR>
+map <D-B> :TagbarToggle<CR>

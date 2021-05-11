@@ -1,7 +1,11 @@
-# dotfiles-ng
+# dotfiles
 
 My personal dotfiles.
 
-- `stow.sh`: install dotfiles using GNU stow
-- `brew.sh`: setup Homebrew programs
-- `macos.sh`: setup macOS settings
+```bash
+# install dotfiles
+$ bin/stow
+
+# uninstall dotfiles
+$ bin/unstow
+```
