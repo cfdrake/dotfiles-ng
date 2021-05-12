@@ -30,7 +30,6 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'majutsushi/tagbar'
-Plug 'mhinz/vim-startify'
 Plug 'mhinz/vim-signify'
 Plug 'psliwka/vim-smoothie'
 Plug 'sheerun/vim-polyglot'
