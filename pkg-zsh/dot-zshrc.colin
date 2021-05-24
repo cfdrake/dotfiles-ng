@@ -23,7 +23,7 @@ function precmd () {
   vcs_info
 }
 
-export PROMPT="%B%F{240}%1~ \$vcs_info_msg_0_%f%b%# "
+export PROMPT="🐚 %B%F{240}%1~ \$vcs_info_msg_0_%f%b"
 
 ##
 ## General Shell
