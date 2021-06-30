@@ -19,10 +19,6 @@ autoload -Uz vcs_info
 setopt prompt_subst
 zstyle ':vcs_info:git:*' formats '(%b) '
 
-function precmd () {
-  vcs_info
-}
-
 export PROMPT="🐚 %B%F{240}%1~> %f%b"
 
 ##
@@ -44,6 +40,7 @@ alias lrt="ls -lrth"
 alias m="/Applications/MacVim.app/Contents/bin/gvim"
 alias macvim="/Applications/MacVim.app/Contents/bin/gvim"
 alias now="date +\"%Y-%m-%e %H:%M:%S%z\""
+alias rg-plain="rg -F"
 alias sudo="sudo "
 alias timestamp="date +%s"
 alias v="vim"
