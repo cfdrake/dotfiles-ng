@@ -29,7 +29,6 @@ call plug#begin('~/.config/nvim/plugged')
 
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'majutsushi/tagbar'
 Plug 'mhinz/vim-signify'
 Plug 'psliwka/vim-smoothie'
 Plug 'sheerun/vim-polyglot'
@@ -45,13 +44,15 @@ colorscheme torte
 if has('gui_running')
   set background=dark
   set guifont=Menlo:h16
+  highlight SignColumn guibg=black
+else
+  highlight SignColumn ctermbg=black
 endif
-
-highlight SignColumn guibg=black
 
 ""
 "" Hotkeys
 
-map <D-O> :Files<CR>
-map <D-F> :Rg<CR>
-map <D-B> :TagbarToggle<CR>
+map <leader>b :Buffers<CR>
+map <leader>t :Tags<CR>
+map <leader>f :Files<CR>
+map <leader>g :Rg<CR>
