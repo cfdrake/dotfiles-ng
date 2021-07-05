@@ -45,6 +45,8 @@ alias sudo="sudo "
 alias timestamp="date +%s"
 alias v="vim"
 
+alias dns-flush="sudo killall -HUP mDNSResponder"
+
 ##
 ## General Development
 
